@@ -12,7 +12,7 @@ public class Livro {
     private String titulo;
     private String autor;
     private String editora;
-
+    
     public livro() {
         this.id = 0;
         this.titulo = "";
