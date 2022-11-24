@@ -19,7 +19,7 @@ public class Operacoes {
             linha=bf.readLine();
             int linhas=0;
             while(true){
-                linha=bf.readLine();
+                linha=bf.readLine(); #excluir linha cabeçalho
                 if(linha==null)
                     break;
                 linhas++;
