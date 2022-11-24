@@ -32,3 +32,33 @@ public class Operacoes {
         System.out.println("t"+total);
         return total;
     }
+    
+     public void buscarLivros(Livro[] livros){
+        livro = new Livro();
+        String nome;
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Digite o termo (Autor ou título) desejado");
+        nome = teclado.nextLine();
+        
+        livro.buscar(livros, nome);
+        
+        for (Livro livro : livros) {
+            //buscar por títulos que tenham parte daquilo que foi digitado
+            if(livro.getTitulo().toLowerCase().contains(nome.toLowerCase())){
+                System.out.println("Id......:"+livro.getId());
+                System.out.println("Título..:"+livro.getTitulo());
+                System.out.println("Autor...:"+livro.getAutor());
+                System.out.println("----------------");
+            }
+            //buscar por autores que tenham parte daquilo que foi digitado, por exmeplo pode digitar apenas o sobre nome
+            if(livro.getAutor().toLowerCase().contains(nome.toLowerCase())){
+                System.out.println("Id......:"+livro.getId());
+                System.out.println("Título..:"+livro.getTitulo());
+                System.out.println("Autor...:"+livro.getAutor());
+                System.out.println("----------------");
+            }
+            
+        }
+    }
+    
+}
