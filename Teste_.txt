@@ -1,0 +1,54 @@
+package Testes;
+
+
+import Biblioteca.Livro;
+import Biblioteca.Operacoes;
+import java.io.File;
+import org.testng.annotations.Test;
+
+public class TestaLivro {
+    Livro livro;
+    
+ 
+    public void contaLinhas(){
+        Operacoes op;
+        op = new Operacoes();
+        File f = new File("abc.txt");
+        int t = op.contaLinhas(f);
+        assert t == 10;
+    }
+    
+
+    
+    public void Test_carregaLivros(){
+        livro = new Livro(); //
+        Livro[] livros;
+        livros = livro.carregaLivros("livros.txt");
+        assert livros.length == 10;
+    }
+    
+ 
+    public void Test_listaLivros(){
+        livro = new Livro(); //
+        Livro[] livros;
+        livros = livro.carregaLivros("livros.txt");
+        int total = livro.listaLivros(livros);
+        assert total == 10;
+    }
+    
+    public void Test_listaOrdenado(){
+        livro = new Livro(); //
+        Livro[] livros;
+        livros = livro.carregaLivros("livros.txt");
+        Livro[] livroOrdenados = livro.listaOrdenado(livros);
+        assert livroOrdenados[0].getTitulo().trim().charAt(0) < livroOrdenados[livroOrdenados.length-1].getTitulo().trim().charAt(0);
+    }
+
+    public void Test_buscarPorId(){
+        livro = new Livro(); //
+        Livro[] livros;
+        livros = livro.carregaLivros("livros.txt");
+        Livro livroConsultado = livro.buscarPorId(livros,1);
+        assert livroConsultado.getTitulo().trim().equals("A Lei do triunfo");
+    }   
+}
