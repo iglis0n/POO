@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class TestaLivro {
     Livro livro;
     
- 
+    @Test
     public void contaLinhas(){
         Operacoes op;
         op = new Operacoes();
@@ -19,7 +19,7 @@ public class TestaLivro {
     }
     
 
-    
+    @Test
     public void Test_carregaLivros(){
         livro = new Livro(); //
         Livro[] livros;
@@ -27,7 +27,7 @@ public class TestaLivro {
         assert livros.length == 10;
     }
     
- 
+    @Test
     public void Test_listaLivros(){
         livro = new Livro(); //
         Livro[] livros;
@@ -35,7 +35,7 @@ public class TestaLivro {
         int total = livro.listaLivros(livros);
         assert total == 10;
     }
-    
+    @Test
     public void Test_listaOrdenado(){
         livro = new Livro(); //
         Livro[] livros;
@@ -43,7 +43,7 @@ public class TestaLivro {
         Livro[] livroOrdenados = livro.listaOrdenado(livros);
         assert livroOrdenados[0].getTitulo().trim().charAt(0) < livroOrdenados[livroOrdenados.length-1].getTitulo().trim().charAt(0);
     }
-
+    @Test
     public void Test_buscarPorId(){
         livro = new Livro(); //
         Livro[] livros;
