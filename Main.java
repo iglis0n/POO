@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // TODO code application logic here
         Livro[] livros;
         Livro livro=new Livro();
         livros = livro.carregaLivros("livros.txt");
@@ -57,7 +56,6 @@ public class Main {
                     break; 
                 case "4":
                     operacoes.buscarLivros(livros);
-                    //livro.buscar(livros); 
                 case "5":
                     operacoes.buscarLeitor(leitores);
                     break; 
