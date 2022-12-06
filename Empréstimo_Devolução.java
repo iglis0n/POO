@@ -7,10 +7,7 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-/**
- *
- * 
- */
+
 public class Emprestimo {
     
     private int id;
@@ -128,7 +125,7 @@ public class Emprestimo {
         Emprestimo emp = new Emprestimo();
         for (Emprestimo emprestimo : emprestimos) {    
             if(emprestimo.getStatus()==1){//apenas os emprestados serão considerados
-                if(emprestimo.getIdLivro()==idBuscar){ //aqui é idLivro pois vamos verificar se o livro se encontra emprestado
+                if(emprestimo.getIdLivro()==idBuscar){ 
                     id = emprestimo.getId();
                     idLeitor = emprestimo.getIdLeitor();
                     idLivro = emprestimo.getIdLivro();
@@ -152,8 +149,8 @@ public class Emprestimo {
         }
         emprestimos[emps.length]=emp; 
         //gravar no arquivo
-        this.gravaEmprestimos("emprestimos.txt", emp);//vamos ter tudo no arquivo
-        return emprestimos;//temos tudo no novo array
+        this.gravaEmprestimos("emprestimos.txt", emp);
+        return emprestimos;
     }
     
     public void gravaEmprestimos(String filename,Emprestimo emprestimo){
@@ -228,8 +225,8 @@ public class Emprestimo {
         if(empTeste.getIdLeitor()!=0){
             System.out.println("Livro emprestado");
             System.out.println("Deseja entrar na fila de espera? (s/n)");
-            //caso nao estiver disponivel, ler a fila de espera 
-            //adicionar na lista de espera
+            //caso nao estiver disponivel, adiciona  na fila de espera 
+           
             teclado = new Scanner(System.in);
             String confirma;
             confirma = teclado.nextLine();
@@ -243,7 +240,7 @@ public class Emprestimo {
             
             
         }else{
-            //teclado.close();
+            
             System.out.println("Confirma Empréstimo? (s/n)");
             teclado = new Scanner(System.in);
             String confirma;
@@ -277,7 +274,7 @@ public class Emprestimo {
         
         if(emprestimo.getIdLivro()==0){
             System.out.println("Livro não está emprestado"); 
-            return;//sai do método devolverLivro
+            return;
         }
         teclado = new Scanner(System.in);
         
@@ -286,7 +283,7 @@ public class Emprestimo {
         String confirma;
         confirma = teclado.nextLine();
         if(confirma.equals("s")){
-            //setar status 0 no empréstimo
+            
             atualizaEmprestimos("emprestimos.txt", emprestimos, emprestimo);
             System.out.println("Livro Devolvido");
         }
@@ -307,7 +304,7 @@ public class Emprestimo {
             //realizar emprestimo já sabendo idLivro e idLeitor
             emprestimo.realizarEmprestimo(emprestimos,livros,leitores,filas); 
             emprestimos=emprestimo.carregaEmprestimos("emprestimos.txt");
-            //filas=fila.carregaFila("fila.txt");
+            
         }
         
     }
