@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
+
 public class Operacoes {
     
     Livro livro;
@@ -14,12 +15,12 @@ public class Operacoes {
         int total=0;
         try {
             FileReader isr = new FileReader(file);
-            BufferedReader bf = new BufferedReader(isr); //excluir linha
+            BufferedReader bf = new BufferedReader(isr);
             String linha;
             linha=bf.readLine();
             int linhas=0;
             while(true){
-                linha=bf.readLine(); //excluir linha cabeçalho
+                linha=bf.readLine();
                 if(linha==null)
                     break;
                 linhas++;
@@ -33,7 +34,7 @@ public class Operacoes {
         return total;
     }
     
-     public void buscarLivros(Livro[] livros){
+    public void buscarLivros(Livro[] livros){
         livro = new Livro();
         String nome;
         Scanner teclado = new Scanner(System.in);
@@ -60,5 +61,27 @@ public class Operacoes {
             
         }
     }
+    Leitor leitor;
+    
+    public void buscarLeitor(Leitor[] leitores){
+        leitor = new Leitor();
+        String nome;
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Digite o nome do leitor");
+        nome = teclado.nextLine();
+        
+        Leitor.buscar(leitores, nome);
+        
+        for (Leitor leitor : leitores) {
+            if(leitor.getNome().toLowerCase().contains(nome.toLowerCase())){
+                System.out.println("Id......:"+leitor.getId());
+                System.out.println("Nome..:"+leitor.getNome());
+                System.out.println("----------------");
+            }
+                
+            }
+            
+        }
     
 }
+
