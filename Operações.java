@@ -14,12 +14,12 @@ public class Operacoes {
         int total=0;
         try {
             FileReader isr = new FileReader(file);
-            BufferedReader bf = new BufferedReader(isr); #excluir linha
+            BufferedReader bf = new BufferedReader(isr); //excluir linha
             String linha;
             linha=bf.readLine();
             int linhas=0;
             while(true){
-                linha=bf.readLine(); #excluir linha cabeçalho
+                linha=bf.readLine(); //excluir linha cabeçalho
                 if(linha==null)
                     break;
                 linhas++;
