@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
-public class NewMain {
+public class Main {
 
     public static void main(String[] args) {
         Livro[] livros;
